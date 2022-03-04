@@ -6,13 +6,17 @@
 //
 
 import UIKit
+enum DiaryEditMode{
+    case new
+    case edit(IndexPath, Diary)
+}
 
 protocol WriteDiaryViewDelegate:AnyObject{
     func didSelectRegister(diary:Diary)
 }
 
 class WriteDiaryViewController: UIViewController {
-
+    
     @IBOutlet weak var confirmBtn: UIBarButtonItem!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
@@ -21,6 +25,8 @@ class WriteDiaryViewController: UIViewController {
     private let datePicker = UIDatePicker()
     private var diaryDate : Date?
     weak  var delegate : WriteDiaryViewDelegate?
+    var diaryEditMode : DiaryEditMode = .new
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +34,28 @@ class WriteDiaryViewController: UIViewController {
         self.configureDatePicker()
         self.confirmBtn.isEnabled = false
         self.configureInputField()
+        self.configureEditMode()
+    }
+    private func dateToString(date:Date)-> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
+        formatter.locale = Locale(identifier: "ko_KR")
+        return formatter.string(from: date)
     }
     
+    private func configureEditMode(){
+        switch self.diaryEditMode{
+        case let .edit(_, diary):
+            self.titleTextField.text = diary.title
+            self.contentTextView.text = diary.contents
+            self.dateTextField.text = self.dateToString(date: diary.date)
+            self.diaryDate = diary.date
+            self.confirmBtn.title = "수정"
+            
+        default:
+            break
+        }
+    }
     private func configureContentsTextView(){
         let borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
         self.contentTextView.layer.borderColor = borderColor.cgColor
@@ -45,13 +71,33 @@ class WriteDiaryViewController: UIViewController {
         self.datePicker.locale = Locale(identifier: "ko-KR")
         self.dateTextField.inputView = self.datePicker
     }
- 
+    
     @IBAction func tappedConfrimButton(_ sender: UIBarButtonItem) {
         guard let title = self.titleTextField.text else {return}
         guard let contents = self.contentTextView.text else {return}
         guard let date = self.diaryDate else {return}
-        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
-        self.delegate?.didSelectRegister(diary: diary)
+        
+        switch self.diaryEditMode {
+        case .new:
+            let diary = Diary(
+                uuidString: UUID().uuidString,
+                title: title,
+                contents: contents,
+                date: date,
+                isStar: false
+            )
+            self.delegate?.didSelectRegister(diary: diary)
+           
+        case let .edit(indexPath, diary):
+            let diary = Diary(
+                uuidString: diary.uuidString,
+                title: title,
+                contents: contents,
+                date: date,
+                isStar: diary.isStar
+            )
+            NotificationCenter.default.post(name: NSNotification.Name("editDiary"), object: diary, userInfo: nil)
+        }
         self.navigationController?.popViewController(animated: true)
     }
     

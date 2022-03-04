@@ -45,7 +45,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mn-m8-SwK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888" y="-618"/>
+            <point key="canvasLocation" x="1142" y="-986"/>
         </scene>
         <!--즐겨찾기-->
         <scene sceneID="rI6-m5-pZO">
@@ -62,12 +62,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y57-96-YcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="43"/>
+            <point key="canvasLocation" x="1141" y="-118"/>
         </scene>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="fBU-pn-XdU">
             <objects>
-                <viewController id="Ieq-1B-mWb" sceneMemberID="viewController">
+                <viewController id="Ieq-1B-mWb" customClass="StartViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tl4-Bh-Mgd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="startCell" id="Hdu-6D-atx" customClass="StarCollectionViewCell" customModule="Diary" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="starCell" reuseIdentifier="starCell" id="Hdu-6D-atx" customClass="StarCollectionViewCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E6U-jr-W1d">
@@ -114,6 +114,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="80"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="gt6-j1-5nq" id="PWt-Sx-9dB"/>
+                                            <outlet property="titleLabel" destination="6eZ-fH-ygz" id="2Bz-6G-bzd"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -128,10 +132,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ofw-nH-xyA"/>
+                    <connections>
+                        <outlet property="collectionView" destination="r3n-r2-oYi" id="y8D-Id-m5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ReJ-2O-bAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889.8550724637682" y="162.72321428571428"/>
+            <point key="canvasLocation" x="2235" y="-119"/>
         </scene>
         <!--Diary Detail View Controller-->
         <scene sceneID="hTV-tQ-RlO">
@@ -242,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wo-d1-dXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3018.840579710145" y="122.54464285714285"/>
+            <point key="canvasLocation" x="4229" y="-192"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -323,12 +330,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="-513"/>
+            <point key="canvasLocation" x="2200" y="-986"/>
         </scene>
         <!--일기 작성-->
         <scene sceneID="1zG-Yf-a99">
             <objects>
-                <viewController id="bZw-Ig-jVr" customClass="WriteDiaryViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteDiaryViewController" id="bZw-Ig-jVr" customClass="WriteDiaryViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dGR-HC-Cx9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDI-Dz-Erm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3039" y="-527"/>
+            <point key="canvasLocation" x="3183" y="-986"/>
         </scene>
     </scenes>
     <resources>
