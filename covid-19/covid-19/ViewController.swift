@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicatorView.startAnimating()
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
         self.fetchCovidOverView { [weak self] result in
             guard let self = self else { return }
             self.indicatorView.stopAnimating()
