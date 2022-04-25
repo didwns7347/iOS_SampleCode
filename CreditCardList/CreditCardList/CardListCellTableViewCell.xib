@@ -84,7 +84,7 @@
                 <outlet property="promotionLabel" destination="Djc-ks-ccf" id="Gxu-fA-DDY"/>
                 <outlet property="rankLabel" destination="Grh-Ot-dMx" id="gz3-Vo-esG"/>
             </connections>
-            <point key="canvasLocation" x="139" y="114"/>
+            <point key="canvasLocation" x="138.40579710144928" y="113.83928571428571"/>
         </tableViewCell>
     </objects>
     <resources>

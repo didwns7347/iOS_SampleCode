@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1026513081013-mb6e52r590naf0dah17iht12jo90q9gj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1026513081013-mb6e52r590naf0dah17iht12jo90q9gj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBWbS43Ug2yEUwsje1UZHpxCCOV5WbqN08</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1026513081013</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>yangjs.CH03-RemoteConfig</string>
+	<key>PROJECT_ID</key>
+	<string>notice-eb600</string>
+	<key>STORAGE_BUCKET</key>
+	<string>notice-eb600.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1026513081013:ios:a468c2af6755641278e4fc</string>
+</dict>
+</plist>
