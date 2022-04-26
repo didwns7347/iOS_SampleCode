@@ -38,6 +38,9 @@
 		9B47C281280D4EFB005C2A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B47C280280D4EFB005C2A9E /* Assets.xcassets */; };
 		9B47C284280D4EFB005C2A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47C282280D4EFB005C2A9E /* LaunchScreen.storyboard */; };
 		9B47C28C280D5584005C2A9E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B47C28B280D5584005C2A9E /* HomeViewController.swift */; };
+		9BF76D2828167D6B006A7BC1 /* ContentCollectionViewRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF76D2728167D6B006A7BC1 /* ContentCollectionViewRankCell.swift */; };
+		9BF76D2A2816870F006A7BC1 /* ContentCollectionViewMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF76D292816870F006A7BC1 /* ContentCollectionViewMainCell.swift */; };
+		9BF76D2C28168FF7006A7BC1 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF76D2B28168FF7006A7BC1 /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		9B47C283280D4EFB005C2A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B47C285280D4EFB005C2A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B47C28B280D5584005C2A9E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9BF76D2728167D6B006A7BC1 /* ContentCollectionViewRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewRankCell.swift; sourceTree = "<group>"; };
+		9BF76D292816870F006A7BC1 /* ContentCollectionViewMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewMainCell.swift; sourceTree = "<group>"; };
+		9BF76D2B28168FF7006A7BC1 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 				9B47C285280D4EFB005C2A9E /* Info.plist */,
 				9B21C8B0280D5F1200602745 /* Content.swift */,
 				9B3AB35628113BD000F4E260 /* ContentConllectionViewCell.swift */,
+				9BF76D2728167D6B006A7BC1 /* ContentCollectionViewRankCell.swift */,
+				9BF76D292816870F006A7BC1 /* ContentCollectionViewMainCell.swift */,
+				9BF76D2B28168FF7006A7BC1 /* UIButton.swift */,
 			);
 			path = CollectionViewSnapkitEX;
 			sourceTree = "<group>";
@@ -250,9 +259,12 @@
 				9B47C278280D4EFA005C2A9E /* AppDelegate.swift in Sources */,
 				9B3AB35928113E3A00F4E260 /* ContentCollectionViewHeader.swift in Sources */,
 				9B3AB35728113BD000F4E260 /* ContentConllectionViewCell.swift in Sources */,
+				9BF76D2828167D6B006A7BC1 /* ContentCollectionViewRankCell.swift in Sources */,
 				9B47C27A280D4EFA005C2A9E /* SceneDelegate.swift in Sources */,
+				9BF76D2A2816870F006A7BC1 /* ContentCollectionViewMainCell.swift in Sources */,
 				9B47C28C280D5584005C2A9E /* HomeViewController.swift in Sources */,
 				9B21C8B1280D5F1200602745 /* Content.swift in Sources */,
+				9BF76D2C28168FF7006A7BC1 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

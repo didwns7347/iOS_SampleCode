@@ -13,7 +13,7 @@ class ContentCollectionViewHeader : UICollectionReusableView{
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        sectionNameLabel.font = .systemFont(ofSize: 10, weight: .bold)
+        sectionNameLabel.font = .systemFont(ofSize: 17, weight: .bold)
         sectionNameLabel.textColor = .white
         sectionNameLabel.sizeToFit()
         
