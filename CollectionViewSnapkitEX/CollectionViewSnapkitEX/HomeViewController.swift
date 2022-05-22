@@ -127,7 +127,7 @@ class HomeViewController : UICollectionViewController{
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         //group
-        let gsize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(450))
+        let gsize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: gsize, subitems: [item])
         
         //section
@@ -157,8 +157,6 @@ extension HomeViewController{
         default:
             return contents[section].contentItem.count
         }
-        
-        return 0
     }
     //콜렌션부 셀 설정
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -179,9 +177,6 @@ extension HomeViewController{
             cell.imageView.image = mainItem?.image
             cell.descriptionLabel.text = mainItem?.description
             return cell
-            
-        default:
-            return UICollectionViewCell()
         }
     }
     

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SnapKit
 class ContentCollectionViewRankCell: UICollectionViewCell{
     let imageView = UIImageView()
     let rankLabel = UILabel()

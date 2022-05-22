@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ContentCollectionViewMainCell : UICollectionViewCell{
     let baseStackView = UIStackView()
@@ -61,7 +62,7 @@ class ContentCollectionViewMainCell : UICollectionViewCell{
             $0.titleLabel?.font = .systemFont(ofSize: 13)
             $0.setTitleColor(.white, for: .normal)
             $0.imageView?.tintColor = .white
-            $0.adjustVerticalLayout(5)
+            $0.adjustVerticalLayout(10)
         }
         
         plusBtn.setTitle("내가 찜한 컨텐츠", for: .normal)
