@@ -23,7 +23,7 @@ class ContentCollectionViewCell : UICollectionViewCell{
         
         contentView.addSubview(imageView)
         
-        imageView.snp_makeConstraints { make in
+        imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
