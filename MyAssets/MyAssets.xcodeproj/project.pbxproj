@@ -22,11 +22,13 @@
 		9B341F1B2844C335003D2027 /* AssetSectionHeaderview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B341F1A2844C335003D2027 /* AssetSectionHeaderview.swift */; };
 		9B341F1D2844C410003D2027 /* AssetSectionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B341F1C2844C410003D2027 /* AssetSectionview.swift */; };
 		9B341F1F2844C638003D2027 /* AssetSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B341F1E2844C638003D2027 /* AssetSummaryView.swift */; };
+		9B376783284F2F8600CFE191 /* AssetCardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B376782284F2F8600CFE191 /* AssetCardSectionView.swift */; };
 		9BF20EA62840C6B60037989A /* MyAssetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF20EA52840C6B60037989A /* MyAssetsApp.swift */; };
 		9BF20EA82840C6B60037989A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF20EA72840C6B60037989A /* ContentView.swift */; };
 		9BF20EAA2840C6B70037989A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF20EA92840C6B70037989A /* Assets.xcassets */; };
 		9BF20EAD2840C6B70037989A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF20EAC2840C6B70037989A /* Preview Assets.xcassets */; };
 		9BF20EB42840C9390037989A /* NavigatoinVarWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF20EB32840C9390037989A /* NavigatoinVarWithButton.swift */; };
+		9BF5471F2848B1CE0035EFD4 /* TabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5471E2848B1CE0035EFD4 /* TabMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +47,14 @@
 		9B341F1A2844C335003D2027 /* AssetSectionHeaderview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSectionHeaderview.swift; sourceTree = "<group>"; };
 		9B341F1C2844C410003D2027 /* AssetSectionview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSectionview.swift; sourceTree = "<group>"; };
 		9B341F1E2844C638003D2027 /* AssetSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSummaryView.swift; sourceTree = "<group>"; };
+		9B376782284F2F8600CFE191 /* AssetCardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCardSectionView.swift; sourceTree = "<group>"; };
 		9BF20EA22840C6B60037989A /* MyAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF20EA52840C6B60037989A /* MyAssetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAssetsApp.swift; sourceTree = "<group>"; };
 		9BF20EA72840C6B60037989A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BF20EA92840C6B70037989A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BF20EAC2840C6B70037989A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BF20EB32840C9390037989A /* NavigatoinVarWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatoinVarWithButton.swift; sourceTree = "<group>"; };
+		9BF5471E2848B1CE0035EFD4 /* TabMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		9B341EF42843A273003D2027 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9B341F142844BFFE003D2027 /* assets.json */,
 				9B341EEA28437373003D2027 /* AssetMenu.swift */,
 				9B341EF22843A25C003D2027 /* AssetBanner.swift */,
 				9B341F162844C087003D2027 /* Asset.swift */,
@@ -162,11 +167,7 @@
 				9BF20EA92840C6B70037989A /* Assets.xcassets */,
 				9B341EF72843A3E0003D2027 /* PageViewController.swift */,
 				9B341EF92843AE3D003D2027 /* PageControl.swift */,
-				9B341F142844BFFE003D2027 /* assets.json */,
-				9B341F182844C147003D2027 /* AssetSummaryData.swift */,
-				9B341F1A2844C335003D2027 /* AssetSectionHeaderview.swift */,
-				9B341F1C2844C410003D2027 /* AssetSectionview.swift */,
-				9B341F1E2844C638003D2027 /* AssetSummaryView.swift */,
+				9BF5471D2848AE380035EFD4 /* AssetSummaryView */,
 			);
 			path = MyAssets;
 			sourceTree = "<group>";
@@ -177,6 +178,19 @@
 				9BF20EAC2840C6B70037989A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BF5471D2848AE380035EFD4 /* AssetSummaryView */ = {
+			isa = PBXGroup;
+			children = (
+				9B341F182844C147003D2027 /* AssetSummaryData.swift */,
+				9B341F1A2844C335003D2027 /* AssetSectionHeaderview.swift */,
+				9B341F1C2844C410003D2027 /* AssetSectionview.swift */,
+				9B341F1E2844C638003D2027 /* AssetSummaryView.swift */,
+				9BF5471E2848B1CE0035EFD4 /* TabMenuView.swift */,
+				9B376782284F2F8600CFE191 /* AssetCardSectionView.swift */,
+			);
+			path = AssetSummaryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +275,12 @@
 				9B341F1B2844C335003D2027 /* AssetSectionHeaderview.swift in Sources */,
 				9B341EF128438D6C003D2027 /* AssetView.swift in Sources */,
 				9BF20EB42840C9390037989A /* NavigatoinVarWithButton.swift in Sources */,
+				9BF5471F2848B1CE0035EFD4 /* TabMenuView.swift in Sources */,
 				9BF20EA62840C6B60037989A /* MyAssetsApp.swift in Sources */,
 				9B341EEB28437373003D2027 /* AssetMenu.swift in Sources */,
 				9B341EFA2843AE3D003D2027 /* PageControl.swift in Sources */,
 				9B341EFC2843B347003D2027 /* AssetBannerView.swift in Sources */,
+				9B376783284F2F8600CFE191 /* AssetCardSectionView.swift in Sources */,
 				9B341EF62843A2BF003D2027 /* BannerCard.swift in Sources */,
 				9B341EED28437CE9003D2027 /* AssetMenuButtonStyle.swift in Sources */,
 			);

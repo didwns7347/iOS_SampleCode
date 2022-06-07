@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-class AssetSummaryData: ObservableObject{
-    @Published var assets:[Asset] = load("assets.json")
+class AssetSummaryData: ObservableObject {
+    @Published var assets: [Asset] = load("assets.json")
 }
-
-
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

@@ -16,6 +16,8 @@ struct AssetView: View {
                     AssetMenuGridView()
                     AssetBannerView()
                         .aspectRatio(contentMode: .fit)
+                    AssetSummaryView()
+                        .environmentObject(AssetSummaryData())
                 }
             }
             .background(Color.gray.opacity(0.2))
