@@ -59,6 +59,7 @@ final class AppDetailViewCtoneroller : UIViewController{
         [appImg,appName,downloadBtn,shareBtn,descLabel].forEach{
             view.addSubview($0)
         }
+        
         appImg.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(32)
             make.leading.equalToSuperview().inset(16)
