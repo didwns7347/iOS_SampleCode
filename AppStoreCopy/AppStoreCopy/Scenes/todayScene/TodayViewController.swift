@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 final class TodayViewContreoller : UIViewController{
+    var todayList : [Today] = []
     private lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -27,6 +28,8 @@ final class TodayViewContreoller : UIViewController{
         collectionView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
+        
+        fetchData()
     }
 }
 extension TodayViewContreoller:UICollectionViewDataSource{
@@ -37,7 +40,7 @@ extension TodayViewContreoller:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "today", for: indexPath) as? TodayCollectionViewCell
         //cell?.backgroundColor = .gray
-        cell?.setUp()
+        cell?.setUp(withData: todayList[indexPath.row])
 
        
         return cell ?? UICollectionViewCell()
@@ -76,8 +79,20 @@ extension TodayViewContreoller:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCollectionViewHeader", for: indexPath) as? TodayCollectionViewCell
         //else {return }
-        let vc = AppDetailViewCtoneroller()
+        let vc = AppDetailViewCtoneroller(today: todayList[indexPath.row])
         self.present(vc, animated: true)
         
+    }
+}
+private extension TodayViewContreoller{
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else {return}
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Today].self, from: data)
+            todayList = result
+        }catch{
+            
+        }
     }
 }

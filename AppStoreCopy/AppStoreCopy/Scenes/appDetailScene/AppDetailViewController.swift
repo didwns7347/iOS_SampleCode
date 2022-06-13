@@ -7,8 +7,19 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class AppDetailViewCtoneroller : UIViewController{
+    let today:Today
+    init(today:Today){
+        self.today = today
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private lazy var appImg: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
@@ -52,7 +63,12 @@ final class AppDetailViewCtoneroller : UIViewController{
         view.backgroundColor = .systemBackground
         setUpView()
         appImg.backgroundColor = .lightGray
-        
+        appName.text = today.title
+        descLabel.text = today.subTitle
+        if let imgURL = URL(string: today.imageURL){
+            self.appImg.kf.setImage(with: imgURL)
+        }
+                
     }
     
     private func setUpView(){

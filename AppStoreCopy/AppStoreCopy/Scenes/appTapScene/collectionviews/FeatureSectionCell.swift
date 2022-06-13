@@ -33,7 +33,7 @@ class FeatureSectionCell :UICollectionViewCell{
         return label
     }()
     
-    private lazy var iamge:UIImageView = {
+    private lazy var imageView:UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -44,8 +44,14 @@ class FeatureSectionCell :UICollectionViewCell{
         return imageView
     }()
     
-    func setUP(){
+    func setUP(with feature:Feature){
         setUpSubViews()
+        title.text = feature.appName
+        descriptionLabel.text = feature.description
+        subTitle.text = feature.type
+        if let imgURL = URL(string: feature.imageURL){
+            self.imageView.kf.setImage(with: imgURL)
+        }
     }
     
     func setUpSubViews(){
@@ -66,8 +72,8 @@ class FeatureSectionCell :UICollectionViewCell{
             $0.top.equalTo(title.snp.bottom).offset(4)
         }
         
-        self.addSubview(iamge)
-        iamge.snp.makeConstraints {
+        self.addSubview(imageView)
+        imageView.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(8.0)

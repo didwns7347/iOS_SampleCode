@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class FeatureSectionView :UIView{
+    var features:[Feature] = []
     private lazy var featureCollection : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -34,6 +35,7 @@ final class FeatureSectionView :UIView{
     override init(frame:CGRect){
         super.init(frame: frame)
         setUpView()
+        fetchData()
     }
     
     required init?(coder: NSCoder) {
@@ -75,9 +77,19 @@ extension FeatureSectionView:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeatureSectionCell", for: indexPath) as? FeatureSectionCell
-        cell?.setUP()
+        cell?.setUP(with: features[indexPath.row%3])
         return cell ?? UICollectionViewCell()
     }
     
     
+}
+private extension FeatureSectionView{
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "Feature", withExtension: "plist") else {return}
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Feature].self, from: data)
+            self.features = result
+        }catch{}
+    }
 }

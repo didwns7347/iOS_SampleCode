@@ -50,8 +50,12 @@ final class RankingViewCell : UICollectionViewCell{
         return label
     }()
     
-    func setUpCell(){
+    func setUpCell(with feature:RankingFeature){
         setUpsubViews()
+        appName.text = feature.title
+        descLabel.text = feature.description
+        inAppPayment.text = feature.isInPurchaseApp ? "앱 내 구입" : ""
+        
     }
     
     private func setUpsubViews(){

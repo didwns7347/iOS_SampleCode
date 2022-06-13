@@ -10,6 +10,8 @@ import SnapKit
 
 final class RankingViewSection: UIView{
     //private let cellHegiht:CGFloat = 30.0
+    var ranking:[RankingFeature] = []
+    
     private lazy var rankingCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -55,6 +57,7 @@ final class RankingViewSection: UIView{
         [rankingCollection,firstLabel,button,separator].forEach { view in
             addSubview(view)
         }
+        self.fetchData()
         self.setupLayout()
     }
     
@@ -90,7 +93,7 @@ extension RankingViewSection:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingViewCell", for: indexPath) as? RankingViewCell
-        cell?.setUpCell()
+        cell?.setUpCell(with: ranking[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     
@@ -101,5 +104,15 @@ extension RankingViewSection:UICollectionViewDelegateFlowLayout{
         CGSize(
             width: collectionView.frame.width-32, height: RankingViewCell.cellHeight
         )
+    }
+}
+private extension RankingViewSection{
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "RankingFeature", withExtension: "plist") else{return}
+        do{
+            let data = try Data(contentsOf: url)
+            let res = try PropertyListDecoder().decode([RankingFeature].self, from: data)
+            ranking = res
+        }catch{}
     }
 }

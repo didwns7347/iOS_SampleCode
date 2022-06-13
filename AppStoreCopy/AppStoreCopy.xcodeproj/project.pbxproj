@@ -18,6 +18,12 @@
 		9B1BC9C72850BF2E00659927 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BC9C62850BF2E00659927 /* TodayCollectionViewCell.swift */; };
 		9B3A17E82856C26E005DF414 /* CodeExchangeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A17E72856C26E005DF414 /* CodeExchangeSectionView.swift */; };
 		9B3A17EB2856C4D6005DF414 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A17EA2856C4D6005DF414 /* AppDetailViewController.swift */; };
+		9B3A17F02856D366005DF414 /* RankingFeature.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3A17ED2856D366005DF414 /* RankingFeature.plist */; };
+		9B3A17F12856D366005DF414 /* Today.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3A17EE2856D366005DF414 /* Today.plist */; };
+		9B3A17F22856D366005DF414 /* Feature.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3A17EF2856D366005DF414 /* Feature.plist */; };
+		9B3A17F52856D3C7005DF414 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A17F42856D3C7005DF414 /* Today.swift */; };
+		9B3A17F72856D44A005DF414 /* Featrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A17F62856D44A005DF414 /* Featrue.swift */; };
+		9B3A17F92856D49D005DF414 /* RankingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A17F82856D49D005DF414 /* RankingFeature.swift */; };
 		9BB1B95A285187DF00F9E15E /* TodayCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1B959285187DF00F9E15E /* TodayCollectionViewHeader.swift */; };
 		9BB1B95D28518E2900F9E15E /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1B95C28518E2900F9E15E /* AppViewController.swift */; };
 		9BB1B9602851EE1900F9E15E /* FeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1B95F2851EE1900F9E15E /* FeatureSectionView.swift */; };
@@ -39,6 +45,12 @@
 		9B1BC9C62850BF2E00659927 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B3A17E72856C26E005DF414 /* CodeExchangeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeExchangeSectionView.swift; sourceTree = "<group>"; };
 		9B3A17EA2856C4D6005DF414 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		9B3A17ED2856D366005DF414 /* RankingFeature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RankingFeature.plist; sourceTree = "<group>"; };
+		9B3A17EE2856D366005DF414 /* Today.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Today.plist; sourceTree = "<group>"; };
+		9B3A17EF2856D366005DF414 /* Feature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feature.plist; sourceTree = "<group>"; };
+		9B3A17F42856D3C7005DF414 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		9B3A17F62856D44A005DF414 /* Featrue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Featrue.swift; sourceTree = "<group>"; };
+		9B3A17F82856D49D005DF414 /* RankingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeature.swift; sourceTree = "<group>"; };
 		9BB1B959285187DF00F9E15E /* TodayCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewHeader.swift; sourceTree = "<group>"; };
 		9BB1B95C28518E2900F9E15E /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		9BB1B95F2851EE1900F9E15E /* FeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionView.swift; sourceTree = "<group>"; };
@@ -83,6 +95,8 @@
 				9B1BC9A82850889600659927 /* AppDelegate.swift */,
 				9B1BC9AA2850889600659927 /* SceneDelegate.swift */,
 				9B1BC9C22850BBAE00659927 /* Scenes */,
+				9B3A17EC2856D339005DF414 /* Data */,
+				9B3A17F32856D3AE005DF414 /* Model */,
 				9B1BC9B12850889900659927 /* Assets.xcassets */,
 				9B1BC9B32850889900659927 /* LaunchScreen.storyboard */,
 				9B1BC9B62850889900659927 /* Info.plist */,
@@ -106,6 +120,26 @@
 				9B3A17EA2856C4D6005DF414 /* AppDetailViewController.swift */,
 			);
 			path = appDetailScene;
+			sourceTree = "<group>";
+		};
+		9B3A17EC2856D339005DF414 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B3A17EF2856D366005DF414 /* Feature.plist */,
+				9B3A17ED2856D366005DF414 /* RankingFeature.plist */,
+				9B3A17EE2856D366005DF414 /* Today.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9B3A17F32856D3AE005DF414 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B3A17F42856D3C7005DF414 /* Today.swift */,
+				9B3A17F62856D44A005DF414 /* Featrue.swift */,
+				9B3A17F82856D49D005DF414 /* RankingFeature.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9BB1B958285187C900F9E15E /* todayScene */ = {
@@ -207,7 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3A17F02856D366005DF414 /* RankingFeature.plist in Resources */,
 				9B1BC9B52850889900659927 /* LaunchScreen.storyboard in Resources */,
+				9B3A17F22856D366005DF414 /* Feature.plist in Resources */,
+				9B3A17F12856D366005DF414 /* Today.plist in Resources */,
 				9B1BC9B22850889900659927 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,8 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B1BC9C42850BBD100659927 /* TodayViewController.swift in Sources */,
+				9B3A17F52856D3C7005DF414 /* Today.swift in Sources */,
 				9B1BC9AD2850889600659927 /* TabBarController.swift in Sources */,
 				9BB1B96428531B4C00F9E15E /* SeparatorView.swift in Sources */,
+				9B3A17F92856D49D005DF414 /* RankingFeature.swift in Sources */,
+				9B3A17F72856D44A005DF414 /* Featrue.swift in Sources */,
 				9B1BC9A92850889600659927 /* AppDelegate.swift in Sources */,
 				9BB1B95A285187DF00F9E15E /* TodayCollectionViewHeader.swift in Sources */,
 				9BB1B9662853259300F9E15E /* RankingSectionView.swift in Sources */,
