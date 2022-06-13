@@ -72,7 +72,7 @@ extension FeatureSectionView:UICollectionViewDelegateFlowLayout{
 }
 extension FeatureSectionView:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        features.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -55,8 +55,15 @@ final class AppDetailViewCtoneroller : UIViewController{
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         btn.tintColor = .systemBlue
+        btn.addTarget(self, action: #selector(shareBtnTapped), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func shareBtnTapped(){
+        let activityItems: [Any] = [today.title]
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        present(activityViewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
