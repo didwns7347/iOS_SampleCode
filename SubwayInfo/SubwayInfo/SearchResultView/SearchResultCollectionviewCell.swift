@@ -25,7 +25,7 @@ class SearchResultCollectionViewCell : UICollectionViewCell{
         return label
     }()
     
-    func setUpCell(){
+    func setUpCell(withInfo: StationArrivalDataResponseModel.RealTimeArrival?){
         layer.cornerRadius = 12
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.2
@@ -36,6 +36,10 @@ class SearchResultCollectionViewCell : UICollectionViewCell{
         [mainLabel, subLabel].forEach{
             self.addSubview($0)
         }
+        mainLabel.text = withInfo!.line ?? ""
+        subLabel.text = withInfo!.remainTime ?? ""
+        
+        
         mainLabel.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(16)
         }

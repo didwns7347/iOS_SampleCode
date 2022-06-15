@@ -7,26 +7,26 @@
 
 import Foundation
 
-struct StationResponseModel: Decodable{
-    var stations: [Station]{
-        searchInfo.row
+struct StationResponseModel: Decodable {
+    var stations: [Station] { searchInfo.row }
+
+    private let searchInfo: SearchInfoBySubwayNameServiceModel
+
+    enum CodingKeys: String, CodingKey {
+        case searchInfo = "SearchInfoBySubwayNameService"
     }
-    private let searchInfo: SearchInfoBySubWayNameServiceModel
-    enum CodingKeys : String, CodingKey{
-         case searchInfo  = "SearchInfoBySubwayNameService"
-    }
-    
-    struct SearchInfoBySubWayNameServiceModel: Decodable{
+
+    struct SearchInfoBySubwayNameServiceModel: Decodable {
         var row: [Station] = []
     }
 }
-struct Station: Decodable{
+
+struct Station: Decodable {
     let stationName: String
-    let lineNumber : String
-    
+    let lineNumber: String
+
     enum CodingKeys: String, CodingKey {
         case stationName = "STATION_NM"
         case lineNumber = "LINE_NUM"
     }
-    
 }

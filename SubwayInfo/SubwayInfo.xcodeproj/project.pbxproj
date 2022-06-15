@@ -81,7 +81,6 @@
 				9B80B30C28586FAE000FFF4D /* SearchResultView */,
 				9B80B2F228585E3C000FFF4D /* AppDelegate.swift */,
 				9B80B2F428585E3C000FFF4D /* SceneDelegate.swift */,
-				9B80B2F628585E3C000FFF4D /* StationSearchViewController.swift */,
 				9B80B2FB28585E3D000FFF4D /* Assets.xcassets */,
 				9B80B2FD28585E3D000FFF4D /* LaunchScreen.storyboard */,
 				9B80B30028585E3D000FFF4D /* Info.plist */,
@@ -95,6 +94,7 @@
 			children = (
 				9B80B30D28586FE8000FFF4D /* SearchResultVC.swift */,
 				9B80B30F28587082000FFF4D /* SearchResultCollectionviewCell.swift */,
+				9B80B2F628585E3C000FFF4D /* StationSearchViewController.swift */,
 			);
 			path = SearchResultView;
 			sourceTree = "<group>";

@@ -10,6 +10,8 @@ import SnapKit
 import Alamofire
 
 class SearchResultViewController : UIViewController{
+    private var arivalInfos: [StationArrivalDataResponseModel.RealTimeArrival] = []
+    var stationName:String?
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: view.frame.width - 32, height: 100)
@@ -32,7 +34,7 @@ class SearchResultViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "왕십리"
+        navigationItem.title = self.stationName
         setupCollectionView()
         fetchData()
     }
@@ -49,9 +51,9 @@ class SearchResultViewController : UIViewController{
         print("REFRESH")
         //refreshControl.endRefreshing()
         
-        var stationName = "서울역"
-        stationName = stationName.replacingOccurrences(of: "역", with: "")
-        let urlString = Constant.arrivalURL + "서울"
+        var stationName = self.stationName
+        stationName = stationName?.replacingOccurrences(of: "역", with: "") ?? ""
+        let urlString = Constant.arrivalURL + stationName!
         
         print(urlString)
         AF.request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
@@ -65,8 +67,11 @@ class SearchResultViewController : UIViewController{
                 }
                 
                 print(data.realtimeArrivalList)
-                
-                
+                self?.arivalInfos = data.realtimeArrivalList
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+              
             }.resume()
     }
 
@@ -76,14 +81,14 @@ extension SearchResultViewController:UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResult", for: indexPath)
         as? SearchResultCollectionViewCell else {return UICollectionViewCell()}
                                                           
-        cell.setUpCell()
+        cell.setUpCell(withInfo: self.arivalInfos[indexPath.row])
        
         //cell.backgroundColor = .gray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return self.arivalInfos.count
     }
     
     
