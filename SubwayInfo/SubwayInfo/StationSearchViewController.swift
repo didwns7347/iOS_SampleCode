@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class StationSearchViewController: UIViewController {
     private var numberOfCell: Int = 0
@@ -24,6 +25,7 @@ class StationSearchViewController: UIViewController {
         
         setNavigationItems()
         setTableViewLayout()
+        requestStationName()
     }
     
     private func setNavigationItems(){
@@ -46,6 +48,20 @@ class StationSearchViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     
+    }
+    
+    private func requestStationName(){
+        let urlString = Constant.searchURL + "서울역"
+        print(urlString)
+        AF.request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "").responseDecodable(of: StationResponseModel.self){ response in
+            guard case .success(let data) = response.result
+            else {
+                print(response.error?.localizedDescription)
+                return
+                
+            }
+            print(data.stations)
+        }.resume()
     }
 
 }

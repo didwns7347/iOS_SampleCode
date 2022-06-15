@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class SearchResultViewController : UIViewController{
     private lazy var collectionView : UICollectionView = {
@@ -33,6 +34,7 @@ class SearchResultViewController : UIViewController{
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "왕십리"
         setupCollectionView()
+        fetchData()
     }
     
     private func setupCollectionView(){
@@ -45,7 +47,27 @@ class SearchResultViewController : UIViewController{
     
     @objc func fetchData(){
         print("REFRESH")
-        refreshControl.endRefreshing()
+        //refreshControl.endRefreshing()
+        
+        var stationName = "서울역"
+        stationName = stationName.replacingOccurrences(of: "역", with: "")
+        let urlString = Constant.arrivalURL + "서울"
+        
+        print(urlString)
+        AF.request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
+            .responseDecodable(of: StationArrivalDataResponseModel.self){ [weak self] response in
+                self?.refreshControl.endRefreshing()
+                guard case .success(let data) = response.result
+                else {
+                    print(response.error?.localizedDescription)
+                    return
+                    
+                }
+                
+                print(data.realtimeArrivalList)
+                
+                
+            }.resume()
     }
 
 }
@@ -63,4 +85,6 @@ extension SearchResultViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
     }
+    
+    
 }
