@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class PostViewCotnoller :UIViewController{
+final class PostViewCotnoller :UIViewController{
     private let img:UIImage
     
     init(img:UIImage){
