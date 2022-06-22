@@ -66,7 +66,7 @@ private extension PostViewCotnoller{
     
     func setupLayout(){
         [imageView,textView].forEach{view.addSubview($0)}
-        //let inset:CGFloat = 16
+
         let imageViewInset: CGFloat = 16.0
 
         imageView.snp.makeConstraints {
