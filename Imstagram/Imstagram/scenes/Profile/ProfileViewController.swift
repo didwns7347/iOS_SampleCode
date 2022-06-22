@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class ProfileViewController : UIViewController {
+final class ProfileViewController : UIViewController {
     private lazy var collectionView :UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0.5

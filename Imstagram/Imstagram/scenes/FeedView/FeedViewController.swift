@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
     
     private lazy var imagePickerController : UIImagePickerController = {
         let pickerView = UIImagePickerController()
