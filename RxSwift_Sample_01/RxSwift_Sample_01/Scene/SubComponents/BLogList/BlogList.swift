@@ -16,12 +16,10 @@ class BlogListView: UITableView{
         origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 80)
     ))
     
-    let cellData = PublishSubject<[BlogListCellData]>()
-    
+
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        
-        bind()
+
         attribute()
         
     }
@@ -31,8 +29,8 @@ class BlogListView: UITableView{
     }
 }
 private extension BlogListView{
-    func bind(){
-        cellData
+    func bind(_ viewModel:BlogListViewModel){
+        viewModel.cellData
             .asDriver(onErrorJustReturn: [])
             .drive(self.rx.items){ tv, row, data in
                 let index = IndexPath(row: row, section: 0)

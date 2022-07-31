@@ -16,6 +16,7 @@
 		9B6C62B828754FBF00575CCA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B6C62B728754FBF00575CCA /* RxSwift */; };
 		9B6C62BB2875545900575CCA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B6C62BA2875545900575CCA /* SnapKit */; };
 		9B6C62BD2875566300575CCA /* rxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C62BC2875566300575CCA /* rxViewController.swift */; };
+		9B8F5EAB289398D200309EE5 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F5EA9289398D200309EE5 /* Test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,9 @@
 		9B6C62AC28754FAA00575CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B6C62AE28754FAA00575CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6C62BC2875566300575CCA /* rxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rxViewController.swift; sourceTree = "<group>"; };
+		9B8F5EA8289398D200309EE5 /* RxCocoaPractice-01-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RxCocoaPractice-01-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B8F5EA9289398D200309EE5 /* Test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
+		9B8F5EAA289398D200309EE5 /* Test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Test.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,9 @@
 				9B6C62AB28754FAA00575CCA /* LaunchScreen.storyboard */,
 				9B6C62AE28754FAA00575CCA /* Info.plist */,
 				9B6C62BC2875566300575CCA /* rxViewController.swift */,
+				9B8F5EA9289398D200309EE5 /* Test.cpp */,
+				9B8F5EAA289398D200309EE5 /* Test.hpp */,
+				9B8F5EA8289398D200309EE5 /* RxCocoaPractice-01-Bridging-Header.h */,
 			);
 			path = "RxCocoaPractice-01";
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				TargetAttributes = {
 					9B6C629C28754FA900575CCA = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -156,6 +164,7 @@
 				9B6C62A128754FA900575CCA /* AppDelegate.swift in Sources */,
 				9B6C62BD2875566300575CCA /* rxViewController.swift in Sources */,
 				9B6C62A328754FA900575CCA /* SceneDelegate.swift in Sources */,
+				9B8F5EAB289398D200309EE5 /* Test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W78LHQDR6;
@@ -310,6 +320,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "yangjs.RxCocoaPractice-01";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RxCocoaPractice-01/RxCocoaPractice-01-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -320,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W78LHQDR6;
@@ -338,6 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "yangjs.RxCocoaPractice-01";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RxCocoaPractice-01/RxCocoaPractice-01-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

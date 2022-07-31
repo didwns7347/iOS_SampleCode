@@ -15,15 +15,11 @@ class SearchBar : UISearchBar{
     let searchBtn = UIButton()
     
     
-    //searchBar 버튼 탭 이벤트
-    let searchBarButtonTapped = PublishRelay<Void>()
-    
-    //searchBar 외부로 내보넬 이벤트
-    var shouldLoadResult = Observable<String>.of("")
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        bind()
+       
         attribute()
         layout()
     }
@@ -32,7 +28,11 @@ class SearchBar : UISearchBar{
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind(){
+    private func bind(_ viewModel : SearchBarViewModel){
+        
+        self.rx.text
+            .bind(to: viewModel.queryText)
+            .disposed(by: disposeBag )
         //서치 바의 버튼이 탭 된경우( 키보드 앤터)
         //서치바 옆에 검색 버튼이 눌린경우
         Observable
@@ -40,19 +40,14 @@ class SearchBar : UISearchBar{
                 self.rx.searchButtonClicked.asObservable(),
                 searchBtn.rx.tap.asObservable()
             )
-            .bind(to: searchBarButtonTapped )
+            .bind(to: viewModel.searchButtonTapped )
             .disposed(by: disposeBag)
         //UI관련이라 ASSignal로가는듯
-        searchBarButtonTapped
+        viewModel.searchButtonTapped
             .asSignal()
             .emit(to: self.rx.endEditing)//연결
             .disposed(by: disposeBag)
         
-        self.shouldLoadResult = searchBarButtonTapped.withLatestFrom(self.rx.text, resultSelector: { a, element in
-            return element ?? ""
-        }).filter{
-            !$0.isEmpty
-        }.distinctUntilChanged()
        
     }
     
