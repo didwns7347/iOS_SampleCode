@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B307EB428ADF49D00D9E430 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B307EB328ADF49D00D9E430 /* RepositoryViewModel.swift */; };
 		9B8AB34528699D6F00150030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8AB34428699D6F00150030 /* AppDelegate.swift */; };
 		9B8AB34728699D6F00150030 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8AB34628699D6F00150030 /* SceneDelegate.swift */; };
 		9B8AB34928699D6F00150030 /* RepositoryViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8AB34828699D6F00150030 /* RepositoryViewCotroller.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		326324157B19F47580FAFBF6 /* Pods-GitRepository_Rx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitRepository_Rx.release.xcconfig"; path = "Target Support Files/Pods-GitRepository_Rx/Pods-GitRepository_Rx.release.xcconfig"; sourceTree = "<group>"; };
 		3572660F6F585170E02372FB /* Pods_GitRepository_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitRepository_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B307EB328ADF49D00D9E430 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		9B8AB34128699D6F00150030 /* GitRepository_Rx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitRepository_Rx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8AB34428699D6F00150030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8AB34628699D6F00150030 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +91,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B307EB028ADDE2B00D9E430 /* Mdoel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mdoel;
+			sourceTree = "<group>";
+		};
 		9B8AB33828699D6F00150030 = {
 			isa = PBXGroup;
 			children = (
+				9B307EB028ADDE2B00D9E430 /* Mdoel */,
 				9B8AB34328699D6F00150030 /* GitRepository_Rx */,
 				9B8AB34228699D6F00150030 /* Products */,
 				C930D763A7D1810326D42855 /* Pods */,
@@ -128,6 +138,7 @@
 			children = (
 				9B8AB34828699D6F00150030 /* RepositoryViewCotroller.swift */,
 				9B8AB3772869A1B000150030 /* RepositoryViewCell.swift */,
+				9B307EB328ADF49D00D9E430 /* RepositoryViewModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -321,6 +332,7 @@
 			files = (
 				9B8AB34928699D6F00150030 /* RepositoryViewCotroller.swift in Sources */,
 				9B8AB34528699D6F00150030 /* AppDelegate.swift in Sources */,
+				9B307EB428ADF49D00D9E430 /* RepositoryViewModel.swift in Sources */,
 				9BD21ECA286AF78900F79A98 /* Repository.swift in Sources */,
 				9B8AB3782869A1B000150030 /* RepositoryViewCell.swift in Sources */,
 				9B8AB34728699D6F00150030 /* SceneDelegate.swift in Sources */,

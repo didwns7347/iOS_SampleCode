@@ -28,7 +28,7 @@ class CategoryListViewController : UIViewController{
                                                   for: IndexPath(row:row, section: 0))
                 cell.textLabel?.text = data.name
                 return cell
-            }
+            }.disposed(by: disposeBag)
         viewModel.pop
             .emit(onNext:{ [weak self] _ in
                 self?.navigationController?.popViewController(animated: true)

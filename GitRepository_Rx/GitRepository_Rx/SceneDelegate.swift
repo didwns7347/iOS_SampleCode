@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let rootVM = RepositoryViewModel(id:"didwns7347")
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = UINavigationController(rootViewController: RepositoryViewCotroller()) 
+        let rootViewController = RepositoryViewCotroller()
+        rootViewController.bind(vm: self.rootVM)
+        
+        window?.rootViewController = UINavigationController(rootViewController: rootViewController) 
         window?.tintColor = .label
         window?.makeKeyAndVisible()
         

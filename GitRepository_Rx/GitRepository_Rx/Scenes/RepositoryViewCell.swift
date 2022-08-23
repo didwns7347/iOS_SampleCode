@@ -55,7 +55,7 @@ final class RepositoryViewCell :UITableViewCell{
     let leftInset :CGFloat = 12.0
     override func layoutSubviews() {
         titleLabel.text = repository?.name
-        descriptionLabel.text = repository?.description
+        descriptionLabel.text = repository?.description ?? ""
         starCntLabel.text = "\(repository?.stargazersCount)"
         lagnLabel.text = repository?.language
         [titleLabel, descriptionLabel, starBtn, starCntLabel, lagnLabel].forEach { view in

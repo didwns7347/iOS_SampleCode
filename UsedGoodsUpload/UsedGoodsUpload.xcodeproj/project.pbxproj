@@ -26,6 +26,7 @@
 		9B16DB86289281470026E173 /* DetailWriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16DB85289281470026E173 /* DetailWriteFormCell.swift */; };
 		9B16DB89289281720026E173 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16DB88289281720026E173 /* DetailWriteFormCellViewModel.swift */; };
 		9B16DB8C289286E40026E173 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16DB8B289286E40026E173 /* MainModel.swift */; };
+		9B8DB21B28AC869100E14443 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DB21A28AC869100E14443 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		9B16DB85289281470026E173 /* DetailWriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCell.swift; sourceTree = "<group>"; };
 		9B16DB88289281720026E173 /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
 		9B16DB8B289286E40026E173 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		9B8DB21A28AC869100E14443 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9B16DB7A289264980026E173 /* Category.swift */,
+				9B8DB21A28AC869100E14443 /* Board.swift */,
 			);
 			path = entitiy;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				9B16DB5428925A6F0026E173 /* AppDelegate.swift in Sources */,
 				9B16DB77289262350026E173 /* TitleTextFieldCellViewModel.swift in Sources */,
+				9B8DB21B28AC869100E14443 /* Board.swift in Sources */,
 				9B16DB82289276BE0026E173 /* PriceTextFieldCellViewModel.swift in Sources */,
 				9B16DB7F289266FA0026E173 /* CategoryListViewController.swift in Sources */,
 				9B16DB5628925A6F0026E173 /* SceneDelegate.swift in Sources */,

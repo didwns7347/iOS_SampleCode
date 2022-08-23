@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
-
+          
 class TitleTextFieldCell : UITableViewCell{
     let disposeBag = DisposeBag()
     
