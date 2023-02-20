@@ -9,11 +9,42 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
-
+import PhotosUI
 class MainViewController : UIViewController{
     let disposeBag = DisposeBag()
     let tableView = UITableView()
     let submitButton = UIBarButtonItem()
+    var imageList : [NSItemProvider?] = [nil]
+    var imageListSubject = BehaviorSubject<[NSItemProvider?]>(value: [nil])
+    private lazy var imagePicker : PHPickerViewController = {
+        var config = PHPickerConfiguration()
+        config.selectionLimit = 5
+        config.filter = .any(of: [.livePhotos, .images])
+        let pickerVC = PHPickerViewController(configuration: config)
+        pickerVC.delegate = self
+        return pickerVC
+    }()
+    private lazy var flowLayout : UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 8.0
+        layout.itemSize = CGSize(width: 70, height: 70)
+        return layout
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
+        view.isScrollEnabled = true
+        view.showsHorizontalScrollIndicator = false
+        view.showsVerticalScrollIndicator = true
+        
+        view.contentInset = .zero
+        view.backgroundColor = .clear
+        view.clipsToBounds = true
+        view.register(ItemImageCollectionViewCell.self, forCellWithReuseIdentifier: ItemImageCollectionViewCell.id)
+        
+        return view
+    }()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -81,6 +112,23 @@ class MainViewController : UIViewController{
         submitButton.rx.tap
             .bind(to:viewModel.submitButtonTapped)
             .disposed(by: disposeBag)
+        viewModel.imageListDrive
+            .drive(collectionView.rx.items(cellIdentifier: ItemImageCollectionViewCell.id, cellType: ItemImageCollectionViewCell.self)){ index, provider, cell in
+                cell.configCell(provider: provider, row: index)
+            }
+            .disposed(by: disposeBag)
+         
+        collectionView.rx.itemSelected
+            .subscribe(onNext:{ indexPath in
+                if indexPath.row == 0{
+                    self.present(self.imagePicker, animated: true)
+                }
+            }).disposed(by: disposeBag)
+        
+        self.imageListSubject.subscribe { providers in
+            viewModel.imageListSubject.on(providers)
+        }.disposed(by: disposeBag)
+            
     }
     
     private func attribute(){
@@ -107,9 +155,15 @@ class MainViewController : UIViewController{
     
     private func layout(){
         view.addSubview(tableView)
+        view.addSubview(collectionView)
         
         tableView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(collectionView.snp.bottom)
+        }
+        collectionView.snp.makeConstraints{
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
+            $0.height.equalTo(120)
         }
     }
 }
@@ -125,4 +179,16 @@ extension Reactive where Base : MainViewController{
             base.present(alertController, animated:true , completion: nil)
         }
     }
+}
+extension MainViewController : UINavigationControllerDelegate, PHPickerViewControllerDelegate{
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        var providers :[NSItemProvider?] = results.map{$0.itemProvider}
+        providers.insert(nil, at: 0)
+        self.imageListSubject.onNext(providers)
+   
+    }
+    
+    
 }

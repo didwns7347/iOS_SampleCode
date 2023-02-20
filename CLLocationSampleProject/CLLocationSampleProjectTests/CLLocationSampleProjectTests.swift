@@ -26,6 +26,9 @@ class CLLocationSampleProjectTests: XCTestCase {
         self.doc = cvsList
     }
     
+    
+  
+    
     func testSetMapCenter(){
         let scheduler = TestScheduler(initialClock: 0)
         

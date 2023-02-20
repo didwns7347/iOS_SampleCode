@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B10603328DC2BB100CB9A60 /* ItemImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B10603228DC2BB100CB9A60 /* ItemImageCollectionViewCell.swift */; };
 		9B16DB5428925A6F0026E173 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16DB5328925A6F0026E173 /* AppDelegate.swift */; };
 		9B16DB5628925A6F0026E173 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16DB5528925A6F0026E173 /* SceneDelegate.swift */; };
 		9B16DB5D28925A700026E173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B16DB5C28925A700026E173 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B10603228DC2BB100CB9A60 /* ItemImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B16DB5028925A6F0026E173 /* UsedGoodsUpload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsedGoodsUpload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B16DB5328925A6F0026E173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B16DB5528925A6F0026E173 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B10603128DC2B8700CB9A60 /* ImageCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9B10603228DC2BB100CB9A60 /* ItemImageCollectionViewCell.swift */,
+			);
+			path = ImageCollectionView;
+			sourceTree = "<group>";
+		};
 		9B16DB4728925A6F0026E173 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 				9B16DB6F28925AAE0026E173 /* MainViewController.swift */,
 				9B16DB7128925B680026E173 /* MainViewModel.swift */,
 				9B16DB8B289286E40026E173 /* MainModel.swift */,
+				9B10603128DC2B8700CB9A60 /* ImageCollectionView */,
 				9B16DB78289262420026E173 /* TitleTextFieldCell */,
 				9B16DB87289281530026E173 /* priceTextFiledCell */,
 				9B16DB8A2892818A0026E173 /* DetailWriteFormCell */,
@@ -248,6 +259,7 @@
 				9B16DB7228925B680026E173 /* MainViewModel.swift in Sources */,
 				9B16DB86289281470026E173 /* DetailWriteFormCell.swift in Sources */,
 				9B16DB7B289264980026E173 /* Category.swift in Sources */,
+				9B10603328DC2BB100CB9A60 /* ItemImageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

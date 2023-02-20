@@ -15,10 +15,10 @@ PODS:
 
 DEPENDENCIES:
   - Nimble
-  - RxBlocking
-  - RxCocoa
-  - RxSwift
-  - RxTest
+  - RxBlocking (= 6.5.0)
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - RxTest (= 6.5.0)
   - SnapKit
   - Stubber
 
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Stubber: 3ea4080870feeaf5b1637314a92245eef9b8c8e7
 
-PODFILE CHECKSUM: 8f4ccdd361fbe34ed7c644cb57cc226b36ab79b3
+PODFILE CHECKSUM: 0efedbf8931c8ef0b663b9f22c41eea5baf1a716
 
 COCOAPODS: 1.10.2

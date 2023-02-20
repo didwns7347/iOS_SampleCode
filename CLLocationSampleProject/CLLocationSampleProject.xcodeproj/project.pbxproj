@@ -58,9 +58,11 @@
 		9B6CFA5028AF8838007FC2AD /* DetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CFA4F28AF8838007FC2AD /* DetailListCell.swift */; };
 		9B6CFA5228AF8A80007FC2AD /* DetailListBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CFA5128AF8A80007FC2AD /* DetailListBackgroundView.swift */; };
 		9B6CFA5428AF8A8C007FC2AD /* DetailListBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CFA5328AF8A8C007FC2AD /* DetailListBackgroundViewModel.swift */; };
+		9B6E9B19292B71AA00F89139 /* RxBlokingSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E9B18292B71AA00F89139 /* RxBlokingSample.swift */; };
 		9B7293D528B2420700A7ADC0 /* LocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7293D428B2420700A7ADC0 /* LocationAPI.swift */; };
 		9B8A070E28B3771900CC5D0A /* LocalNetworkStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A070D28B3771900CC5D0A /* LocalNetworkStub.swift */; };
 		9B8A071428B3775A00CC5D0A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A071328B3775A00CC5D0A /* XCTest.framework */; };
+		9B8B664F292B5FD0002676BC /* RxTestSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B664E292B5FD0002676BC /* RxTestSample.swift */; };
 		9B9E7B5128B35C24000934F9 /* CLLocationSampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9E7B5028B35C24000934F9 /* CLLocationSampleProjectTests.swift */; };
 		9BBC169528B379A300B37483 /* networkDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BBC169428B379A300B37483 /* networkDummy.json */; };
 		9BBC169728B37A5500B37483 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBC169628B37A5500B37483 /* Dummy.swift */; };
@@ -141,9 +143,11 @@
 		9B6CFA4F28AF8838007FC2AD /* DetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCell.swift; sourceTree = "<group>"; };
 		9B6CFA5128AF8A80007FC2AD /* DetailListBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListBackgroundView.swift; sourceTree = "<group>"; };
 		9B6CFA5328AF8A8C007FC2AD /* DetailListBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListBackgroundViewModel.swift; sourceTree = "<group>"; };
+		9B6E9B18292B71AA00F89139 /* RxBlokingSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBlokingSample.swift; sourceTree = "<group>"; };
 		9B7293D428B2420700A7ADC0 /* LocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPI.swift; sourceTree = "<group>"; };
 		9B8A070D28B3771900CC5D0A /* LocalNetworkStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkStub.swift; sourceTree = "<group>"; };
 		9B8A071328B3775A00CC5D0A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9B8B664E292B5FD0002676BC /* RxTestSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTestSample.swift; sourceTree = "<group>"; };
 		9B9E7B4E28B35C24000934F9 /* CLLocationSampleProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLLocationSampleProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9E7B5028B35C24000934F9 /* CLLocationSampleProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationSampleProjectTests.swift; sourceTree = "<group>"; };
 		9BBC169428B379A300B37483 /* networkDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = networkDummy.json; sourceTree = "<group>"; };
@@ -355,6 +359,8 @@
 				9BBC169428B379A300B37483 /* networkDummy.json */,
 				9BBC169628B37A5500B37483 /* Dummy.swift */,
 				9BBC169A28B37BA700B37483 /* LocationInformationModelTests.swift */,
+				9B8B664E292B5FD0002676BC /* RxTestSample.swift */,
+				9B6E9B18292B71AA00F89139 /* RxBlokingSample.swift */,
 			);
 			path = CLLocationSampleProjectTests;
 			sourceTree = "<group>";
@@ -596,6 +602,8 @@
 				9BBC169B28B37BA700B37483 /* LocationInformationModelTests.swift in Sources */,
 				9BBC169728B37A5500B37483 /* Dummy.swift in Sources */,
 				9B9E7B5128B35C24000934F9 /* CLLocationSampleProjectTests.swift in Sources */,
+				9B6E9B19292B71AA00F89139 /* RxBlokingSample.swift in Sources */,
+				9B8B664F292B5FD0002676BC /* RxTestSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,7 +756,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DR2C4G73MR;
-				ENABLE_TESTING_SEARCH_PATHS = NO;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,7 +794,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DR2C4G73MR;
-				ENABLE_TESTING_SEARCH_PATHS = NO;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -14,6 +14,8 @@ struct MainViewModel{
     let categoryViewModel = CategoryViewModel()
     let detailWriteFormCellViewModel = DetailWriteFormCellViewModel()
     
+    var imageListSubject =  BehaviorSubject<[NSItemProvider?]>(value:[nil])
+    var imageListDrive : Driver<[NSItemProvider?]>
     //viewmodel -> view
     let cellData : Driver<[String]>
     let presentAlert: Signal<Alert>
@@ -54,6 +56,7 @@ struct MainViewModel{
             .map{$0?.isEmpty ?? true}
             .startWith(true)
             .map{$0 ? ["- 내용을 입력해주세요"]:[]}
+        
         let errorMsg = Observable
             .combineLatest(titleMSG,
                            categoryMSG,
@@ -73,6 +76,9 @@ struct MainViewModel{
                 return categoryViewModel
             }
             .asDriver(onErrorDriveWith: .empty())
+        
+        imageListDrive = imageListSubject.asDriver(onErrorJustReturn: [nil])
+        
         
     }
     
