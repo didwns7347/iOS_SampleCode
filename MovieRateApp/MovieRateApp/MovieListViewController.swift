@@ -10,6 +10,8 @@ import UIKit
 final  class MovieListViewController: UIViewController {
     private lazy var presenter = MovieListPresenter(viewcontroller: self)
     private let searchController = UISearchController()
+ 
+
     private lazy var collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -32,10 +34,17 @@ final  class MovieListViewController: UIViewController {
         return tv
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
 }
 extension MovieListViewController: MovieListProtocol {
@@ -68,5 +77,14 @@ extension MovieListViewController: MovieListProtocol {
     func updateSearchTableView(isHidden: Bool) {
         searchResultTableView.isHidden = isHidden
         searchResultTableView.reloadData()
+    }
+    
+    func pushToMovieViewController(with movie: Movie) {
+        let moveDetailViewController = MovieDetailViewController(movie: movie)
+        self.show(moveDetailViewController, sender: nil)
+    }
+    
+    func updateCollectionView() {
+        collectionView.reloadData()
     }
 }

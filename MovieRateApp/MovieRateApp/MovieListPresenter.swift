@@ -12,50 +12,37 @@ protocol MovieListProtocol: AnyObject {
     func setupSearchBar()
     func setupViews()
     func updateSearchTableView(isHidden: Bool)
+    func pushToMovieViewController(with movie: Movie)
+    func updateCollectionView()
 }
 
 final class MovieListPresenter: NSObject {
     private weak var viewcontroller: MovieListProtocol?
-
+    private let userDefaultManager: UserDefaultManegerProtocol
     private let movieSearchManager: MoviewSearchManageable
-    private var likedMovie: [Movie] = [
-        Movie(title: "Starwars",
-              imageURL: "",
-              userRating: "4.5",
-              actor: "abc",
-              director: "abc",
-              pubDate: "2021"
-             ),
-        Movie(title: "Starwars",
-              imageURL: "",
-              userRating: "4.5",
-              actor: "abc",
-              director: "abc",
-              pubDate: "2021"
-             ),
-        Movie(
-            title: "Starwars",
-            imageURL: "",
-            userRating: "4.5",
-            actor: "abc",
-            director: "abc",
-            pubDate: "2021"
-        )
-    ]
+    private var likedMovie: [Movie] = []
     
     private var currentMovieSearchResult: [Movie] = []
 
     init(
         viewcontroller: MovieListProtocol,
-        movieSearchManager: MoviewSearchManageable = MovieSearchManager()
+        movieSearchManager: MoviewSearchManageable = MovieSearchManager(),
+        userDefaultManager: UserDefaultManegerProtocol = UserdefaultManager()
     ) {
         self.viewcontroller = viewcontroller
         self.movieSearchManager = movieSearchManager
+        self.userDefaultManager = userDefaultManager
     }
     func viewDidLoad() {
         viewcontroller?.setupNavigationBar()
         viewcontroller?.setupSearchBar()
         viewcontroller?.setupViews()
+    }
+    
+    func viewWillAppear() {
+        likedMovie = userDefaultManager.getMovies()
+        viewcontroller?.updateCollectionView()
+        
     }
 }
 
@@ -116,9 +103,19 @@ extension MovieListPresenter: UICollectionViewDataSource {
         cell?.update(movie)
         return cell ?? UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = likedMovie[indexPath.row]
+        viewcontroller?.pushToMovieViewController(with: movie)
+    }
 }
 
-extension MovieListPresenter: UITableViewDelegate {}
+extension MovieListPresenter: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = currentMovieSearchResult[indexPath.row]
+        viewcontroller?.pushToMovieViewController(with: movie)
+    }
+}
 extension MovieListPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         currentMovieSearchResult.count
