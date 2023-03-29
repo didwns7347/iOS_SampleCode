@@ -1,4 +1,4 @@
 disabled_rules:
     - vertical_whitespace
     - trailing_whitespace
-    
+    - identifier_name

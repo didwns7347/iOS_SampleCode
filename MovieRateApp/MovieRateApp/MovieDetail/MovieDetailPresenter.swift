@@ -34,7 +34,7 @@ final class MovieDetailPresenter {
         movie.isLiked.toggle()
         if !movie.isLiked {
             userDefaultManager.removeMovie(movie)
-        }else {
+        } else {
             userDefaultManager.addMovies(movie)
         }
 
