@@ -6,17 +6,27 @@
 //
 
 import UIKit
-
+import SnapKit
 final class SearchBookViewController : UIViewController {
     private lazy var presenter = SearchBookViewPresenter(vc: self)
+    
+    private lazy var tableView : UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = presenter
+        tableView.dataSource = presenter
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidload()
+        BookSearchManager().request(from: "swift") { books in
+            print(books)
+        }
     }
 }
 extension SearchBookViewController: SearchBookProtocol {
-    func  () {
+    func setUpViews() {
         view.backgroundColor = .systemBackground
         
         let searchController = UISearchController()
@@ -25,5 +35,15 @@ extension SearchBookViewController: SearchBookProtocol {
         searchController.searchBar.delegate = presenter
         
         navigationItem.searchController = searchController
+        
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+    }
+    
+    func dismiss() {
+        self.dismiss(animated: true)
     }
 }
