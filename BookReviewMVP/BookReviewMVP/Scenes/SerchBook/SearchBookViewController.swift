@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 final class SearchBookViewController : UIViewController {
-    private lazy var presenter = SearchBookViewPresenter(vc: self)
+    lazy var presenter = SearchBookViewPresenter(vc: self)
     
     private lazy var tableView : UITableView = {
         let tableView = UITableView()
@@ -20,9 +20,6 @@ final class SearchBookViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidload()
-        BookSearchManager().request(from: "swift") { books in
-            print(books)
-        }
     }
 }
 extension SearchBookViewController: SearchBookProtocol {
@@ -44,6 +41,11 @@ extension SearchBookViewController: SearchBookProtocol {
     }
     
     func dismiss() {
+        navigationItem.searchController?.dismiss(animated: true)
         self.dismiss(animated: true)
+    }
+    
+    func reloadData() {
+        self.tableView.reloadData()
     }
 }

@@ -13,6 +13,9 @@ protocol ReviewWriteProtocol {
     func dismissVC()
     func setupViews()
     func presentToSearchBookViewController()
+    
+    //view에서 model에 의존하지 않기 위해
+    func updateContent(title: String, iamgeURL:URL?)
 }
 
 class ReviewWritePresenter {
@@ -40,5 +43,16 @@ class ReviewWritePresenter {
     func didTapBookTitleButton() {
         viewcontroller.presentToSearchBookViewController()
     }
+    func updateView(book:Book) {
+        viewcontroller.updateContent(title: book.title , iamgeURL:book.imageURL)
+    }
+    
+}
+
+extension ReviewWritePresenter : BookSearchDelegate {
+    func bookDidSelected(book: Book) {
+        updateView(book:book)
+    }
+    
     
 }

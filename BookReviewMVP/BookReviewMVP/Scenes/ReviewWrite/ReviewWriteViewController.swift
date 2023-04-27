@@ -6,6 +6,7 @@
 //
 
 import SnapKit
+import Kingfisher
 import UIKit
 class ReviewWriteViewController : UIViewController{
     private lazy var presenter = ReviewWritePresenter(viewcontroller: self)
@@ -121,8 +122,18 @@ extension ReviewWriteViewController: ReviewWriteProtocol{
         }
     }
     
+    func updateContent(title: String, iamgeURL:URL?) {
+        self.titleButton.setTitle(title, for: .normal)
+        self.titleButton.setTitleColor(.black, for: .normal)
+        self.contentTextView.text = title
+        
+        self.imageView.kf.setImage(with: iamgeURL)
+    }
+    
     func presentToSearchBookViewController() {
-        let vc = UINavigationController(rootViewController: SearchBookViewController())
+        let searchBookViewController = SearchBookViewController()
+        searchBookViewController.presenter.bookSearckDelegate = self.presenter
+        let vc = UINavigationController(rootViewController: searchBookViewController)
         present(vc, animated: true)
     }
 }
