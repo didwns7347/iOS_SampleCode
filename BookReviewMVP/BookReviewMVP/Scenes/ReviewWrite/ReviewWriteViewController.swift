@@ -19,8 +19,12 @@ class ReviewWriteViewController : UIViewController{
         button.setTitleColor(.tertiaryLabel, for: .normal)
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = .systemFont(ofSize: 23, weight: .bold)
+        
+        button.addTarget(self, action: #selector(didTapBookTitleButton), for: .touchUpInside)
         return button
     }()
+    
+
     
     private lazy var contentTextView : UITextView = {
         let textView = UITextView()
@@ -35,7 +39,7 @@ class ReviewWriteViewController : UIViewController{
     private lazy var imageView : UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        
+        imageView.backgroundColor = .systemGray6
         return imageView
     }()
     
@@ -92,6 +96,35 @@ extension ReviewWriteViewController: ReviewWriteProtocol{
     func dismissVC(){
         self.dismiss(animated: true)
     }
+    
+    func setupViews() {
+        view.backgroundColor = .systemBackground
+        [titleButton, contentTextView, imageView]
+            .forEach{ view.addSubview($0) }
+        
+        titleButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(20)
+        }
+        
+        contentTextView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(titleButton.snp.bottom).offset(16)
+            
+        }
+        imageView.snp.makeConstraints{
+            $0.leading.equalTo(contentTextView.snp.leading)
+            $0.trailing.equalTo(contentTextView.snp.trailing)
+            $0.top.equalTo(contentTextView.snp.bottom).offset(16)
+            $0.height.equalTo(200.0)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    func presentToSearchBookViewController() {
+        let vc = UINavigationController(rootViewController: SearchBookViewController())
+        present(vc, animated: true)
+    }
 }
 extension ReviewWriteViewController {
     @objc func didLeftBarButtonTapped(){
@@ -100,5 +133,9 @@ extension ReviewWriteViewController {
     
     @objc func didRightBarButtonTapped(){
         presenter.didRightBarButtonTapped()
+    }
+    
+    @objc func didTapBookTitleButton() {
+        presenter.didTapBookTitleButton()
     }
 }
