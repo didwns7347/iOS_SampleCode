@@ -6,8 +6,8 @@ target 'MovieRateApp' do
   use_frameworks!
 
   # Pods for MovieRateApp
-  pod 'SwiftLint'
-
+  pod 'SwiftLint' 
+  pod 'SwiftLocalhost'
   target 'MovieRateAppTests' do
     inherit! :search_paths
     # Pods for testing

@@ -37,6 +37,7 @@
 		9B076CAC29D18E4F00AFED71 /* MoviewSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B076CAB29D18E4F00AFED71 /* MoviewSearchResponseModel.swift */; };
 		9B076CAF29D18EFB00AFED71 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B076CAE29D18EFB00AFED71 /* Movie.swift */; };
 		9B076CB129D18F0C00AFED71 /* MovieSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B076CB029D18F0C00AFED71 /* MovieSearchManager.swift */; };
+		9BE60B4C29D693D000DA037D /* SwiftLocalHostTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE60B4B29D693D000DA037D /* SwiftLocalHostTest.swift */; };
 		F028A423FE2C99867EDC1DCB /* Pods_MovieRateApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2464868C2AEA637B4C5948 /* Pods_MovieRateApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		9B076CAB29D18E4F00AFED71 /* MoviewSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviewSearchResponseModel.swift; sourceTree = "<group>"; };
 		9B076CAE29D18EFB00AFED71 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		9B076CB029D18F0C00AFED71 /* MovieSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchManager.swift; sourceTree = "<group>"; };
+		9BE60B4B29D693D000DA037D /* SwiftLocalHostTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLocalHostTest.swift; sourceTree = "<group>"; };
 		CED17CBBEA8A2CB87634874F /* Pods_MovieRateApp_MovieRateAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRateApp_MovieRateAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FAEFFF0EDAC884FB172369 /* Pods_MovieRateAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRateAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,8 +167,10 @@
 		9B00FF0F29D2D4F700F68989 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				9BE60B4B29D693D000DA037D /* SwiftLocalHostTest.swift */,
 				9B00FF0D29D2D22200F68989 /* MovieListPresenterTests.swift */,
 				9B00FF1829D2DD8A00F68989 /* MovieDetailPresenterTests.swift */,
+				9B076C8E29D1864000AFED71 /* MovieRateAppUITests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -188,7 +192,6 @@
 				9B00FF0229D2846C00F68989 /* .swiftlint.yml */,
 				9B076C6A29D1863E00AFED71 /* MovieRateApp */,
 				9B076C8429D1864000AFED71 /* MovieRateAppTests */,
-				9B076C8E29D1864000AFED71 /* MovieRateAppUITests */,
 				9B076C6929D1863E00AFED71 /* Products */,
 				10929406B538672191DB936E /* Pods */,
 				C9FE99D80CB914EEA58C19A9 /* Frameworks */,
@@ -281,6 +284,7 @@
 				9B076C6529D1863E00AFED71 /* Frameworks */,
 				9B076C6629D1863E00AFED71 /* Resources */,
 				9B076CA829D1896B00AFED71 /* SwiftLint */,
+				7C8E0AE9B4C5161A239546B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,6 +327,7 @@
 				9B076C8729D1864000AFED71 /* Sources */,
 				9B076C8829D1864000AFED71 /* Frameworks */,
 				9B076C8929D1864000AFED71 /* Resources */,
+				644C2D733028E1821BA8A671 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +416,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		644C2D733028E1821BA8A671 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieRateApp-MovieRateAppUITests/Pods-MovieRateApp-MovieRateAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieRateApp-MovieRateAppUITests/Pods-MovieRateApp-MovieRateAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieRateApp-MovieRateAppUITests/Pods-MovieRateApp-MovieRateAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C8E0AE9B4C5161A239546B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieRateApp/Pods-MovieRateApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieRateApp/Pods-MovieRateApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieRateApp/Pods-MovieRateApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B076CA829D1896B00AFED71 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,6 +568,7 @@
 				9B00FF1729D2D7CE00F68989 /* MockMovieSearchManager.swift in Sources */,
 				9B00FF1929D2DD8A00F68989 /* MovieDetailPresenterTests.swift in Sources */,
 				9B00FF0E29D2D22200F68989 /* MovieListPresenterTests.swift in Sources */,
+				9BE60B4C29D693D000DA037D /* SwiftLocalHostTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

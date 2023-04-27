@@ -1,16 +1,28 @@
 PODS:
+  - CocoaAsyncSocket (7.6.5)
+  - Criollo (1.1.0):
+    - CocoaAsyncSocket (~> 7.6.5)
   - SwiftLint (0.49.1)
+  - SwiftLocalhost (0.0.8):
+    - Criollo
 
 DEPENDENCIES:
   - SwiftLint
+  - SwiftLocalhost
 
 SPEC REPOS:
   trunk:
+    - CocoaAsyncSocket
+    - Criollo
     - SwiftLint
+    - SwiftLocalhost
 
 SPEC CHECKSUMS:
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  Criollo: 7e97de7e9231f080dbe58585f410a1779eca5828
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
+  SwiftLocalhost: 78ad6ca707ef2162aa9ab29407321226d44f5027
 
-PODFILE CHECKSUM: 35ad3342c6ace622749940c5f5384c812f5b4101
+PODFILE CHECKSUM: da9fdf4e79e95aa9948a883d2ceecfbc168ace51
 
 COCOAPODS: 1.10.2
