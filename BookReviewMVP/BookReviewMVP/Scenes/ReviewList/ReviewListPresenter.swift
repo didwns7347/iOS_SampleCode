@@ -33,10 +33,8 @@ final class ReviewListPresenter: NSObject {
     }
     
     func viewWillAppear() {
-        vc.reloadTableView()
         fetchReviews()
         vc.reloadTableView()
-        
     }
     
     func fetchReviews() {

@@ -6,8 +6,11 @@
 //
 import Alamofire
 import Foundation
+protocol BookSearchManagerProtocol {
+    func request(from keyword:String , completionHandler:@escaping(([Book]) -> Void) )
+}
 
-struct BookSearchManager {
+struct BookSearchManager :BookSearchManagerProtocol{
     
     //ID JV9iODq3L_I73ufESxUq
     //secret zD8huRCDka

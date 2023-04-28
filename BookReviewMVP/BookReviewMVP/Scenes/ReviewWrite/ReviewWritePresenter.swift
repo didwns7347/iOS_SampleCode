@@ -21,11 +21,16 @@ protocol ReviewWriteProtocol {
 
 class ReviewWritePresenter {
     let viewcontroller: ReviewWriteProtocol
-    let bookStorageManager = BookStorageManager()
-    private var currentContent: Book? = nil
+    let bookStorageManager: UserDefaultsManagerProtocol
+    var book: Book? = nil
+    let contentsTextViewPlaceHolderText = "내용을 입력해주세요."
     
-    init(viewcontroller: ReviewWriteProtocol) {
+    init(
+        viewcontroller: ReviewWriteProtocol,
+        reviewStorage : UserDefaultsManagerProtocol = BookStorageManager()
+    ) {
         self.viewcontroller = viewcontroller
+        self.bookStorageManager = reviewStorage
     }
     
     func viewDidLoad(){
@@ -39,17 +44,18 @@ class ReviewWritePresenter {
         viewcontroller.showCloseAlertSheet()
     }
     
-    func didRightBarButtonTapped() {
-        viewcontroller.dismissVC()
-    }
-    
-    func saveCurrentContent(current:String) {
-        guard let content = currentContent else {
+    func didRightBarButtonTapped(contentText:String) {
+        guard
+            let book = book,
+            contentText != contentsTextViewPlaceHolderText
+        else {
             return
         }
-        let bookModel = BookReview(title: content.title, conent: current, thumbnail: content.imageURL)
+        let bookModel = BookReview(title: book.title, conent: contentText, thumbnail: book.imageURL)
         
         bookStorageManager.save(book: bookModel)
+
+        viewcontroller.dismissVC()
     }
     
     func didTapBookTitleButton() {
@@ -63,7 +69,7 @@ class ReviewWritePresenter {
 
 extension ReviewWritePresenter : BookSearchDelegate {
     func bookDidSelected(book: Book) { 
-        self.currentContent = book
+        self.book = book
         updateView(book:book)
     }
     

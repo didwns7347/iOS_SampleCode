@@ -149,8 +149,7 @@ extension ReviewWriteViewController {
     }
     
     @objc func didRightBarButtonTapped(){
-        presenter.saveCurrentContent(current:contentTextView.text)
-        presenter.didRightBarButtonTapped()
+        presenter.didRightBarButtonTapped(contentText: contentTextView.text)
     }
     
     @objc func didTapBookTitleButton() {
