@@ -33,7 +33,7 @@ class SearchBookPresenterTests: XCTest {
     }
     
     func test_searchBarSearchButtonClicked가_호출되면() {
-        
+        sut.searchBarSearchButtonClicked(UISearchBar())
     }
 }
 extension SearchBookPresenterTests : BookSearchDelegate {
