@@ -22,6 +22,7 @@
 		501925AE29EBD5CB00BFE07E /* ReviewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501925AD29EBD5CB00BFE07E /* ReviewWriteViewController.swift */; };
 		501925B029EBD5D800BFE07E /* ReviewWritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501925AF29EBD5D800BFE07E /* ReviewWritePresenter.swift */; };
 		9B78516F29FB870600DC902F /* MockBookStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78516E29FB870600DC902F /* MockBookStorageManager.swift */; };
+		9B78517429FB949400DC902F /* MockReviewListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78517329FB949400DC902F /* MockReviewListVC.swift */; };
 		9BA3EB6929FA50DB00704FFA /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6829FA50DB00704FFA /* SearchBookViewController.swift */; };
 		9BA3EB6B29FA50E400704FFA /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6A29FA50E400704FFA /* SearchBookPresenter.swift */; };
 		9BA3EB6E29FA58CC00704FFA /* BookSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6D29FA58CC00704FFA /* BookSearchResultModel.swift */; };
@@ -63,6 +64,7 @@
 		501925AD29EBD5CB00BFE07E /* ReviewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewController.swift; sourceTree = "<group>"; };
 		501925AF29EBD5D800BFE07E /* ReviewWritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenter.swift; sourceTree = "<group>"; };
 		9B78516E29FB870600DC902F /* MockBookStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBookStorageManager.swift; sourceTree = "<group>"; };
+		9B78517329FB949400DC902F /* MockReviewListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReviewListVC.swift; sourceTree = "<group>"; };
 		9BA3EB6829FA50DB00704FFA /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		9BA3EB6A29FA50E400704FFA /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
 		9BA3EB6D29FA58CC00704FFA /* BookSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResultModel.swift; sourceTree = "<group>"; };
@@ -102,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				5019256E29E6E29D00BFE07E /* BookReviewMVP */,
-				5019258529E6E29D00BFE07E /* BookReviewMVPTests */,
 				5019258F29E6E29D00BFE07E /* BookReviewMVPUITests */,
+				5019258529E6E29D00BFE07E /* BookReviewMVPTests */,
 				5019256D29E6E29D00BFE07E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,8 +138,8 @@
 		5019258529E6E29D00BFE07E /* BookReviewMVPTests */ = {
 			isa = PBXGroup;
 			children = (
-				5019258629E6E29D00BFE07E /* ReviewListPresenterTests.swift */,
-				9B78516E29FB870600DC902F /* MockBookStorageManager.swift */,
+				9B78517229FB945500DC902F /* Tests */,
+				9B78517129FB944D00DC902F /* Mocks */,
 			);
 			path = BookReviewMVPTests;
 			sourceTree = "<group>";
@@ -177,6 +179,23 @@
 				501925AF29EBD5D800BFE07E /* ReviewWritePresenter.swift */,
 			);
 			path = ReviewWrite;
+			sourceTree = "<group>";
+		};
+		9B78517129FB944D00DC902F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9B78516E29FB870600DC902F /* MockBookStorageManager.swift */,
+				9B78517329FB949400DC902F /* MockReviewListVC.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		9B78517229FB945500DC902F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5019258629E6E29D00BFE07E /* ReviewListPresenterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		9BA3EB6729FA50CB00704FFA /* SerchBook */ = {
@@ -364,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B78516F29FB870600DC902F /* MockBookStorageManager.swift in Sources */,
+				9B78517429FB949400DC902F /* MockReviewListVC.swift in Sources */,
 				5019258729E6E29D00BFE07E /* ReviewListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
