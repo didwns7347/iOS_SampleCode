@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 struct BookSearchRequestModel: Codable {
     ///검색할 책 키워드
     let query : String
@@ -21,4 +22,8 @@ struct Book: Decodable {
 }
 
 
-
+struct BookModel :Codable {
+    var title: String?
+    var conent: String?
+    var thumbnail: URL?
+}

@@ -25,6 +25,7 @@
 		9BA3EB6B29FA50E400704FFA /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6A29FA50E400704FFA /* SearchBookPresenter.swift */; };
 		9BA3EB6E29FA58CC00704FFA /* BookSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6D29FA58CC00704FFA /* BookSearchResultModel.swift */; };
 		9BA3EB7029FA5A0200704FFA /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6F29FA5A0200704FFA /* BookSearchManager.swift */; };
+		9BA3EB7329FA6ED300704FFA /* BookStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB7229FA6ED300704FFA /* BookStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		9BA3EB6A29FA50E400704FFA /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
 		9BA3EB6D29FA58CC00704FFA /* BookSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResultModel.swift; sourceTree = "<group>"; };
 		9BA3EB6F29FA5A0200704FFA /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
+		9BA3EB7229FA6ED300704FFA /* BookStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				9BA3EB6F29FA5A0200704FFA /* BookSearchManager.swift */,
+				9BA3EB7229FA6ED300704FFA /* BookStorageManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				9BA3EB6929FA50DB00704FFA /* SearchBookViewController.swift in Sources */,
 				501925AE29EBD5CB00BFE07E /* ReviewWriteViewController.swift in Sources */,
 				9BA3EB7029FA5A0200704FFA /* BookSearchManager.swift in Sources */,
+				9BA3EB7329FA6ED300704FFA /* BookStorageManager.swift in Sources */,
 				9BA3EB6B29FA50E400704FFA /* SearchBookPresenter.swift in Sources */,
 				501925A929E6E58800BFE07E /* ReviewListPresenter.swift in Sources */,
 				5019257229E6E29D00BFE07E /* SceneDelegate.swift in Sources */,

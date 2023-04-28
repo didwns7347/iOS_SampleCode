@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ReviewWriteProtocol {
     func setUpNavigtaionBar()
@@ -20,6 +21,8 @@ protocol ReviewWriteProtocol {
 
 class ReviewWritePresenter {
     let viewcontroller: ReviewWriteProtocol
+    let bookStorageManager = BookStorageManager()
+    private var currentContent: Book? = nil
     
     init(viewcontroller: ReviewWriteProtocol) {
         self.viewcontroller = viewcontroller
@@ -40,6 +43,15 @@ class ReviewWritePresenter {
         viewcontroller.dismissVC()
     }
     
+    func saveCurrentContent(current:String) {
+        guard let content = currentContent else {
+            return
+        }
+        let bookModel = BookModel(title: content.title, conent: current, thumbnail: content.imageURL)
+        
+        bookStorageManager.save(book: bookModel)
+    }
+    
     func didTapBookTitleButton() {
         viewcontroller.presentToSearchBookViewController()
     }
@@ -50,7 +62,8 @@ class ReviewWritePresenter {
 }
 
 extension ReviewWritePresenter : BookSearchDelegate {
-    func bookDidSelected(book: Book) {
+    func bookDidSelected(book: Book) { 
+        self.currentContent = book
         updateView(book:book)
     }
     

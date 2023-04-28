@@ -8,7 +8,18 @@
 import UIKit
 import SnapKit
 final class SearchBookViewController : UIViewController {
-    lazy var presenter = SearchBookViewPresenter(vc: self)
+    lazy var presenter = SearchBookViewPresenter(vc: self, bookSearckDelegate: searchDelegate)
+    
+    private let searchDelegate: BookSearchDelegate
+    
+    init( delegate: BookSearchDelegate){
+        self.searchDelegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var tableView : UITableView = {
         let tableView = UITableView()

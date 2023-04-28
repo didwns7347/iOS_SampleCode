@@ -10,6 +10,9 @@ import Kingfisher
 import UIKit
 class ReviewWriteViewController : UIViewController{
     private lazy var presenter = ReviewWritePresenter(viewcontroller: self)
+    
+    
+    
     override func viewDidLoad() {
         presenter.viewDidLoad()
     }
@@ -53,6 +56,9 @@ extension ReviewWriteViewController : UITextViewDelegate {
             return
         }
         textView.textColor = .label
+        if textView.text == "내용을 입력해주세요"{
+            textView.text = ""
+        }
     }
 }
 
@@ -125,14 +131,14 @@ extension ReviewWriteViewController: ReviewWriteProtocol{
     func updateContent(title: String, iamgeURL:URL?) {
         self.titleButton.setTitle(title, for: .normal)
         self.titleButton.setTitleColor(.black, for: .normal)
-        self.contentTextView.text = title
+//        self.contentTextView.text = title
         
         self.imageView.kf.setImage(with: iamgeURL)
     }
     
     func presentToSearchBookViewController() {
-        let searchBookViewController = SearchBookViewController()
-        searchBookViewController.presenter.bookSearckDelegate = self.presenter
+        let searchBookViewController = SearchBookViewController(delegate: presenter)
+  
         let vc = UINavigationController(rootViewController: searchBookViewController)
         present(vc, animated: true)
     }
@@ -143,6 +149,7 @@ extension ReviewWriteViewController {
     }
     
     @objc func didRightBarButtonTapped(){
+        presenter.saveCurrentContent(current:contentTextView.text)
         presenter.didRightBarButtonTapped()
     }
     

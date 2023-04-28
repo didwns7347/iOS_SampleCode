@@ -21,11 +21,16 @@ final class SearchBookViewPresenter :NSObject{
     private let vc : SearchBookProtocol
     private let bookSearchManager = BookSearchManager()
     private var books : [Book] = []
-    var bookSearckDelegate :BookSearchDelegate? = nil
+    var bookSearckDelegate :BookSearchDelegate
     
-    init(vc: SearchBookProtocol) {
+    init(
+        vc: SearchBookProtocol,
+        bookSearckDelegate: BookSearchDelegate
+    ) {
         self.vc = vc
+        self.bookSearckDelegate = bookSearckDelegate
     }
+    
     func viewDidload() {
         vc.setUpViews()
     }
@@ -47,7 +52,7 @@ extension SearchBookViewPresenter : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        var selectResult: [Book] = []
 //        let selectedBook =  selectResult[indexPath.row]
-        self.bookSearckDelegate?.bookDidSelected(book: self.books[indexPath.row])
+        self.bookSearckDelegate.bookDidSelected(book: self.books[indexPath.row])
         vc.dismiss()
     }
 }
