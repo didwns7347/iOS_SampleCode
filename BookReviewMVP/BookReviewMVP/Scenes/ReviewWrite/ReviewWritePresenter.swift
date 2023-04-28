@@ -47,7 +47,7 @@ class ReviewWritePresenter {
         guard let content = currentContent else {
             return
         }
-        let bookModel = BookModel(title: content.title, conent: current, thumbnail: content.imageURL)
+        let bookModel = BookReview(title: content.title, conent: current, thumbnail: content.imageURL)
         
         bookStorageManager.save(book: bookModel)
     }

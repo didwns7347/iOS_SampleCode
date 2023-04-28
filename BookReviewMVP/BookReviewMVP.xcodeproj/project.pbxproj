@@ -12,7 +12,7 @@
 		5019257429E6E29D00BFE07E /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019257329E6E29D00BFE07E /* ReviewListViewController.swift */; };
 		5019257929E6E29D00BFE07E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5019257829E6E29D00BFE07E /* Assets.xcassets */; };
 		5019257C29E6E29D00BFE07E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019257A29E6E29D00BFE07E /* LaunchScreen.storyboard */; };
-		5019258729E6E29D00BFE07E /* BookReviewMVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019258629E6E29D00BFE07E /* BookReviewMVPTests.swift */; };
+		5019258729E6E29D00BFE07E /* ReviewListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019258629E6E29D00BFE07E /* ReviewListPresenterTests.swift */; };
 		5019259129E6E29D00BFE07E /* BookReviewMVPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019259029E6E29D00BFE07E /* BookReviewMVPUITests.swift */; };
 		5019259329E6E29D00BFE07E /* BookReviewMVPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019259229E6E29D00BFE07E /* BookReviewMVPUITestsLaunchTests.swift */; };
 		501925A129E6E3DD00BFE07E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 501925A029E6E3DD00BFE07E /* SnapKit */; };
@@ -21,6 +21,7 @@
 		501925A929E6E58800BFE07E /* ReviewListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501925A829E6E58800BFE07E /* ReviewListPresenter.swift */; };
 		501925AE29EBD5CB00BFE07E /* ReviewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501925AD29EBD5CB00BFE07E /* ReviewWriteViewController.swift */; };
 		501925B029EBD5D800BFE07E /* ReviewWritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501925AF29EBD5D800BFE07E /* ReviewWritePresenter.swift */; };
+		9B78516F29FB870600DC902F /* MockBookStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78516E29FB870600DC902F /* MockBookStorageManager.swift */; };
 		9BA3EB6929FA50DB00704FFA /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6829FA50DB00704FFA /* SearchBookViewController.swift */; };
 		9BA3EB6B29FA50E400704FFA /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6A29FA50E400704FFA /* SearchBookPresenter.swift */; };
 		9BA3EB6E29FA58CC00704FFA /* BookSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3EB6D29FA58CC00704FFA /* BookSearchResultModel.swift */; };
@@ -54,13 +55,14 @@
 		5019257B29E6E29D00BFE07E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5019257D29E6E29D00BFE07E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5019258229E6E29D00BFE07E /* BookReviewMVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewMVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5019258629E6E29D00BFE07E /* BookReviewMVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewMVPTests.swift; sourceTree = "<group>"; };
+		5019258629E6E29D00BFE07E /* ReviewListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenterTests.swift; sourceTree = "<group>"; };
 		5019258C29E6E29D00BFE07E /* BookReviewMVPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewMVPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5019259029E6E29D00BFE07E /* BookReviewMVPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewMVPUITests.swift; sourceTree = "<group>"; };
 		5019259229E6E29D00BFE07E /* BookReviewMVPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewMVPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		501925A829E6E58800BFE07E /* ReviewListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenter.swift; sourceTree = "<group>"; };
 		501925AD29EBD5CB00BFE07E /* ReviewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewController.swift; sourceTree = "<group>"; };
 		501925AF29EBD5D800BFE07E /* ReviewWritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenter.swift; sourceTree = "<group>"; };
+		9B78516E29FB870600DC902F /* MockBookStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBookStorageManager.swift; sourceTree = "<group>"; };
 		9BA3EB6829FA50DB00704FFA /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		9BA3EB6A29FA50E400704FFA /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
 		9BA3EB6D29FA58CC00704FFA /* BookSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResultModel.swift; sourceTree = "<group>"; };
@@ -134,7 +136,8 @@
 		5019258529E6E29D00BFE07E /* BookReviewMVPTests */ = {
 			isa = PBXGroup;
 			children = (
-				5019258629E6E29D00BFE07E /* BookReviewMVPTests.swift */,
+				5019258629E6E29D00BFE07E /* ReviewListPresenterTests.swift */,
+				9B78516E29FB870600DC902F /* MockBookStorageManager.swift */,
 			);
 			path = BookReviewMVPTests;
 			sourceTree = "<group>";
@@ -360,7 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5019258729E6E29D00BFE07E /* BookReviewMVPTests.swift in Sources */,
+				9B78516F29FB870600DC902F /* MockBookStorageManager.swift in Sources */,
+				5019258729E6E29D00BFE07E /* ReviewListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +533,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,6 +562,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,7 +586,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Z9TF2995L;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FireJS.BookReviewMVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -600,7 +606,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Z9TF2995L;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FireJS.BookReviewMVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -619,6 +625,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Z9TF2995L;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FireJS.BookReviewMVPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -637,6 +644,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Z9TF2995L;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FireJS.BookReviewMVPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

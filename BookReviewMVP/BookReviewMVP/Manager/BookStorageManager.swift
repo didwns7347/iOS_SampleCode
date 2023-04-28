@@ -6,11 +6,15 @@
 //
 
 import Foundation
+protocol UserDefaultsManagerProtocol {
+    func fetch() -> [BookReview]
+    func save(book: BookReview)
+}
 
-struct BookStorageManager {
+struct BookStorageManager :UserDefaultsManagerProtocol {
     private let key = "bookreviews"
     ///북 저장
-    func save(book:BookModel){
+    func save(book:BookReview){
         var books = fetch()
         books.append(book)
         let encoder = JSONEncoder()
@@ -20,10 +24,10 @@ struct BookStorageManager {
         }
     }
     ///북 가져오기
-    func fetch() -> [BookModel] {
+    func fetch() -> [BookReview] {
         if let savedData = UserDefaults.standard.object(forKey: key) as? Data {
             let decoder = JSONDecoder()
-            if let savedObject = try? decoder.decode([BookModel].self, from: savedData) {
+            if let savedObject = try? decoder.decode([BookReview].self, from: savedData) {
                 return savedObject
             }
         }

@@ -17,10 +17,14 @@ protocol ReviewListProtocol {
 final class ReviewListPresenter: NSObject {
     
     private let vc: ReviewListProtocol
-    private let bookStorageManager = BookStorageManager()
-    private var reviews: [BookModel] = []
-    init(vc : ReviewListProtocol){
+    private let bookStorageManager :UserDefaultsManagerProtocol
+    private var reviews: [BookReview] = []
+    init(
+        vc : ReviewListProtocol,
+        storageManager: UserDefaultsManagerProtocol = BookStorageManager()
+    ){
         self.vc = vc
+        bookStorageManager = storageManager
     }
     
     func viewDidLoad() {
@@ -66,5 +70,5 @@ extension ReviewListPresenter: UITableViewDataSource {
 }
 
 extension ReviewListPresenter : UITableViewDelegate {
- 
+    
 }

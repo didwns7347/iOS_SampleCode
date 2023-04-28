@@ -22,7 +22,7 @@ struct Book: Decodable {
 }
 
 
-struct BookModel :Codable {
+struct BookReview :Codable {
     var title: String?
     var conent: String?
     var thumbnail: URL?
